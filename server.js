@@ -26,12 +26,13 @@ cloudinary.v2.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// Enable CORS for your Express app
-app.use(cors({
-  origin: 'https://himanshisingh-portfolio.netlify.app', // Your frontend URL
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed HTTP methods
-  credentials: true // Allow credentials (like cookies, authorization headers)
-}));
+app.use(
+  cors({
+    origin: [process.env.PORTFOLIO_URL, process.env.DASHBOARD_URL],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 // Start the server
 app.listen(process.env.PORT, () => {
