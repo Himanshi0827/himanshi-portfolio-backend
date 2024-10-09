@@ -24,8 +24,8 @@ dotenv.config({ path: "./config/config.env" });
 // );
 app.use(
   cors({
-    origin: ["https://himanshisingh-portfolio.netlify.app/", "https://himanshisinghdashboard.netlify.app/login"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: ["https://himanshisingh-portfolio.netlify.app", "https://himanshisinghdashboard.netlify.app"],
+    // methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
